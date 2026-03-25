@@ -18,6 +18,9 @@ public class CreateCourseRequest {
     @Min(value = 1, message = "duration must be >= 1")
     private Integer duration;
 
+    @NotNull(message = "instructorId is required")
+    private Long instructorId;
+
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
@@ -26,4 +29,7 @@ public class CreateCourseRequest {
 
     public Integer getDuration() { return duration; }
     public void setDuration(Integer duration) { this.duration = duration; }
+
+    public Long getInstructorId() { return instructorId; }
+    public void setInstructorId(Long instructorId) { this.instructorId = instructorId; }
 }

@@ -8,6 +8,8 @@ public class CourseResponse {
     private String name;
     private String description;
     private Integer duration;
+    private Long instructorId;
+    private String instructorName;
     private Instant createdAt;
 
     public Long getId() { return id; }
@@ -21,6 +23,12 @@ public class CourseResponse {
 
     public Integer getDuration() { return duration; }
     public void setDuration(Integer duration) { this.duration = duration; }
+
+    public Long getInstructorId() { return instructorId; }
+    public void setInstructorId(Long instructorId) { this.instructorId = instructorId; }
+
+    public String getInstructorName() { return instructorName; }
+    public void setInstructorName(String instructorName) { this.instructorName = instructorName; }
 
     public Instant getCreatedAt() { return createdAt; }
     public void setCreatedAt(Instant createdAt) { this.createdAt = createdAt; }

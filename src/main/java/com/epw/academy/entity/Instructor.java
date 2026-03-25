@@ -4,8 +4,8 @@ import jakarta.persistence.*;
 import java.time.Instant;
 
 @Entity
-@Table(name = "course")
-public class Course {
+@Table(name = "instructor")
+public class Instructor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -14,15 +14,8 @@ public class Course {
     @Column(nullable = false, length = 120)
     private String name;
 
-    @Column(length = 2000)
-    private String description;
-
-    @Column(nullable = false)
-    private Integer duration;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "instructor_id")
-    private Instructor instructor;
+    @Column(length = 120)
+    private String email;
 
     @Column(nullable = false, updatable = false)
     private Instant createdAt;
@@ -38,14 +31,8 @@ public class Course {
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
-    public String getDescription() { return description; }
-    public void setDescription(String description) { this.description = description; }
-
-    public Integer getDuration() { return duration; }
-    public void setDuration(Integer duration) { this.duration = duration; }
-
-    public Instructor getInstructor() { return instructor; }
-    public void setInstructor(Instructor instructor) { this.instructor = instructor; }
+    public String getEmail() { return email; }
+    public void setEmail(String email) { this.email = email; }
 
     public Instant getCreatedAt() { return createdAt; }
     public void setCreatedAt(Instant createdAt) { this.createdAt = createdAt; }
